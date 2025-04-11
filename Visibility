@@ -1,0 +1,24 @@
+class VisibilityExample {
+    public int publicVariable = 10;
+    private int privateVariable = 20;
+
+    public void publicMethod() {
+        System.out.println("This is a public method.");
+    }
+
+    private void privateMethod() {
+        System.out.println("This is a private method.");
+    }
+}
+
+public class Visibility {
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No:24310, Section: c");
+
+        VisibilityExample example = new VisibilityExample();
+
+        System.out.println("Public variable: " + example.publicVariable);
+        example.publicMethod();
+
+    }
+}
