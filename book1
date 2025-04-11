@@ -1,0 +1,28 @@
+class book1 {
+    String title;
+    String author;
+    int yearOfPublication;
+
+    public book1(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.yearOfPublication = year;
+    }
+
+    public void displayDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Year of Publication: " + yearOfPublication);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No: 24310, Section: C");
+
+        book1 bookA = new book1("Diary of a Young Girl", "Anne Frank", 1947);
+        book1 bookB = new book1("The Lord of the Rings", "J.R.R. Tolkien", 1954);
+
+        bookA.displayDetails();
+        bookB.displayDetails();
+    }
+}
