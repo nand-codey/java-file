@@ -1,0 +1,19 @@
+class MyClass1 {
+    static int count = 0;
+    final double PI = 3.14159;
+
+    public MyClass1() {
+        count++;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No: 24310, Section: C");
+
+        new MyClass1();
+        new MyClass1();
+        new MyClass1();
+
+        System.out.println("Final count: " + MyClass1.count);
+        System.out.println("PI value: " + new MyClass1().PI);
+    }
+}
