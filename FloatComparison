@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class FloatComparison {
+    public static void main(String[] args) {
+        System.out.println("Name: John Doe, Roll No: 123, Section: A");
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input floating-point number: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Input floating-point another number: ");
+        double num2 = scanner.nextDouble();
+        
+        if (Math.abs(num1 - num2) < 0.001) {
+            System.out.println("They are the same");
+        } else {
+            System.out.println("They are different");
+        }
+    }
+}
