@@ -1,0 +1,85 @@
+public class VehicleDemo {
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No: 24310, Section: C");
+
+        Truck truck = new Truck("Mahindra", "Bolero Maxi Truck", 2025, "Diesel/CNG");
+        Car car = new Car("Maruti Suzuki", "Baleno", 2023, "Petrol/CNG");
+        Motorcycle bike = new Motorcycle("Royal Enfield", "Classic 350", 2023, "Petrol");
+
+        Vehicle[] vehicles = {truck, car, bike};
+
+        for (Vehicle v : vehicles) {
+            System.out.println(v + " - Max Speed: " + v.getMaxSpeed() + " km/h");
+        }
+
+        double carEfficiency = car.calculateFuelEfficiency(300, 20);
+        System.out.println("Fuel efficiency of car: " + carEfficiency + " km/l");
+
+        double bikeDistance = bike.calculateDistanceTraveled(60, 2);
+        System.out.println("Distance travelled by bike in 2 hours at 60 km/h: " + bikeDistance + " km");
+    }
+}
+
+class Vehicle {
+    String make;
+    String model;
+    int year;
+    String fuelType;
+
+    public Vehicle(String make, String model, int year, String fuelType) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelType = fuelType;
+    }
+
+    public double calculateFuelEfficiency(double distance, double fuelUsed) {
+        return distance / fuelUsed;
+    }
+
+    public double calculateDistanceTraveled(double speed, double time) {
+        return speed * time;
+    }
+
+    public int getMaxSpeed() {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return year + " " + make + " " + model + " (" + fuelType + ")";
+    }
+}
+
+class Truck extends Vehicle {
+    public Truck(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 80;
+    }
+}
+
+class Car extends Vehicle {
+    public Car(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 120;
+    }
+}
+
+class Motorcycle extends Vehicle {
+    public Motorcycle(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    @Override
+    public int getMaxSpeed() {
+        return 150;
+    }
+}
