@@ -1,0 +1,42 @@
+class BasicCalculator {
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public double subtract(double a, double b) {
+        return a - b;
+    }
+}
+
+class AdvancedCalculator extends BasicCalculator {
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+
+    public double divide(double a, double b) {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        return a / b;
+    }
+}
+
+class ScientificCalculator extends AdvancedCalculator {
+    public double power(double a, double b) {
+        return Math.pow(a, b);
+    }
+}
+
+public class CalculatorDemo {
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No: 24310, Section: c");
+        
+        ScientificCalculator calc = new ScientificCalculator();
+        
+        System.out.println("50 + 23 = " + calc.add(50, 23));
+        System.out.println("4 - 1 = " + calc.subtract(4, 1));
+        System.out.println("9 * 3 = " + calc.multiply(9, 3));
+        System.out.println("16 / 4 = " + calc.divide(16, 4));
+        System.out.println("9 ^ 3 = " + calc.power(9, 3));
+    }
+}
