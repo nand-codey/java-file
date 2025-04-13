@@ -1,0 +1,47 @@
+class Employee {
+    String name;
+    String employeeId;
+    double salary;
+
+    public Employee(String name, String employeeId, double salary) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.salary = salary;
+    }
+
+    public double calculateSalary() {
+        return salary;
+    }
+}
+
+class RegularEmployee extends Employee {
+    public RegularEmployee(String name, String employeeId, double salary) {
+        super(name, employeeId, salary);
+    }
+}
+
+class Manager extends Employee {
+    double bonus;
+
+    public Manager(String name, String employeeId, double salary, double bonus) {
+        super(name, employeeId, salary);
+        this.bonus = bonus;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return salary + bonus;
+    }
+}
+
+public class EmployeeManagement {
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No: 24310, Section: C");
+        
+        RegularEmployee emp1 = new RegularEmployee("Jennie", "0AER1",250000);
+        Manager emp2 = new Manager("Lisa", "0Aer2", 350000, 10000);
+        
+        System.out.println("Regular Employee Salary: " + emp1.calculateSalary());
+        System.out.println("Manager Salary: " + emp2.calculateSalary());
+    }
+}
