@@ -1,0 +1,40 @@
+class Animal {
+    public void eat() {
+        System.out.println("Animal is hunting");
+    }
+}
+
+class Herbivores extends Animal {
+    @Override
+    public void eat() {
+        System.out.println("Herbivore eats greens");
+    }
+}
+
+class Carnivores extends Animal {
+    @Override
+    public void eat() {
+        System.out.println("Carnivore eats flesh");
+    }
+}
+
+class Omnivores extends Animal {
+    @Override
+    public void eat() {
+        System.out.println("Omnivore eats both greens and flesh");
+    }
+}
+
+public class AnimalDemo {
+    public static void main(String[] args) {
+        System.out.println("Name: Nandini Ravula, Roll No: 24310, Section: C");
+        
+        Animal herbivore = new Herbivores();
+        Animal carnivore = new Carnivores();
+        Animal omnivore = new Omnivores();
+        
+        herbivore.eat();
+        carnivore.eat();
+        omnivore.eat();
+    }
+}
